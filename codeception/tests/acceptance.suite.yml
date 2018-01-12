@@ -1,0 +1,24 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+actor: AcceptanceTester
+modules:
+    enabled:
+        - PhpBrowser:
+# set the url to read the page that phpbuiltinserver is serving
+            url: http://localhost:8000/
+        - \Helper\Acceptance
+env:
+  local:
+    modules:
+      config:
+        PhpBrowser:
+          url: http://localhost:8000/
+  google:
+    modules:
+      config:
+        PhpBrowser:
+          url: https://www.google.com/
